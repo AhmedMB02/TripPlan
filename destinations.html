@@ -14,7 +14,6 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">✈️</span>
                 <span class="logo-text">TripPlan</span>
             </a>
 
@@ -34,7 +33,6 @@
             </ul>
         </div>
     </nav>
-
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
@@ -84,6 +82,8 @@
             </div>
 
             <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+            <button id="addCustomDestBtn" class="btn btn-primary" style="margin-left: 10px;">+ Add Custom
+                Destination</button>
         </div>
 
         <!--les cards des destinations s'affiche ici-->
@@ -93,6 +93,42 @@
             <p>No destinations match your filters. Try adjusting them!</p>
         </div>
     </section>
+
+    <!-- Custom Destination Modal -->
+    <div id="customDestModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeCustomDestModal">&times;</span>
+            <h2>Add Custom Destination</h2>
+            <p>Create your own dream destination</p>
+            <form id="customDestForm">
+                <div class="form-group">
+                    <label for="customDestName">Destination Name</label>
+                    <input type="text" id="customDestName" placeholder="e.g., My Secret Island" required>
+                </div>
+                <div class="form-group">
+                    <label for="customDestContinent">Continent</label>
+                    <select id="customDestContinent" class="filter-select"
+                        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+                        <option value="Asia">Asia</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Europe">Europe</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">South America</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="customDestDesc">Description</label>
+                    <input type="text" id="customDestDesc" placeholder="Brief description" required>
+                </div>
+                <div class="form-group">
+                    <label for="customDestBudget">Budget Per Day ($)</label>
+                    <input type="number" id="customDestBudget" placeholder="100" min="0" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Add to My Plan</button>
+            </form>
+        </div>
+    </div>
 
 
     <!-- Footer -->
@@ -115,7 +151,7 @@
             <div class="footer-section">
                 <h4>Contact</h4>
                 <p>Email: hello@tripplan.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
+                <p>Phone: +216 55 55 55 55</p>
             </div>
         </div>
 
@@ -126,6 +162,7 @@
 
     <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="custom_destinations.js"></script>
 </body>
 
 </html>

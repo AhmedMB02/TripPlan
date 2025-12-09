@@ -52,7 +52,7 @@ const destinations = [
         name: "Dubai, UAE",
         continent: "Asia",
         description: "Luxury shopping and desert adventures",
-        image: "assets/images/Bali.jpg",
+        image: "assets/images/dubai.jpg",
         minBudgetDay: 300,
     },
     {
@@ -123,8 +123,16 @@ const destinations = [
         id: 16,
         name: "Santorini, Greece",
         continent: "Europe",
-        description: "The beauty of seas merged with whilte buildings",
+        description: "The beauty of seas merged with white buildings",
         image: "assets/images/santorini.jpg",
+        minBudgetDay: 140,
+    },
+    {
+        id: 17,
+        name: "Sidi Bousaid, Tunisia",
+        continent: "Africa",
+        description: "The beauty of seas merged with white buildings",
+        image: "assets/images/Tunis.jpg",
         minBudgetDay: 140,
     }
 ];
