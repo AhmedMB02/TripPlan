@@ -84,7 +84,7 @@ const destinations = [
         name: "Sydney, Australia",
         continent: "Oceania",
         description: "Stunning beaches and iconic landmarks",
-        image: "assets/images/Bali.jpg",
+        image: "assets/images/sydney.jpg",
         minBudgetDay: 300,
     },
     {
@@ -133,6 +133,14 @@ const destinations = [
         continent: "Africa",
         description: "The beauty of seas merged with white buildings",
         image: "assets/images/Tunis.jpg",
+        minBudgetDay: 140,
+    },
+    {
+        id: 18,
+        name: " Madagascar",
+        continent: "Africa",
+        description: "The beauty of Africa and nice beaches",
+        image: "assets/images/madagascar.jpg",
         minBudgetDay: 140,
     }
 ];

@@ -50,18 +50,10 @@ const storage = {
 
 
 
+
+
 // Initialize Plan
 let plan = storage.getPlan()
-
-// Utility: Get budget category
-function getBudgetCategory(minBudget, maxBudget) {
-  if (maxBudget < 800) return "budget"
-  if (minBudget > 1500) return "luxury"
-  return "mid"
-}
-
-
-
 
 
 // Dark mode management
@@ -129,7 +121,7 @@ const auth = {
 
     if (loginBtn) {
       if (user) {
-        loginBtn.textContent = user; // Show username
+        loginBtn.textContent = user;
         loginBtn.onclick = () => {
           if (confirm("Do you want to logout?")) {
             auth.logout();
@@ -193,7 +185,7 @@ auth.updateUI();
 
 
 
-/*----------------------------------la logique de drag and drop---------------------------------done*/
+/*----------------------------------la logique de drag and drop dans itinerary---------------------------------done*/
 let draggedItem = null;
 
 function formatDate(date) {
@@ -383,17 +375,6 @@ updateDisplay();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------Grille des destinations---------------------------------------done*/
 
 function initDestinationsGrid() {
@@ -425,6 +406,12 @@ function initDestinationsGrid() {
       // Safety check for minBudgetDay
       const budget = dest.minBudgetDay !== undefined ? `$${dest.minBudgetDay} / day` : 'N/A';
 
+      const currentPlan = storage.getPlan();
+      const isAdded = currentPlan.destinations.some(d => d.id === dest.id);
+      const btnText = isAdded ? "Added" : "Add to Plan";
+      const btnClass = isAdded ? "btn btn-secondary" : "btn btn-primary";
+      const disabledAttr = isAdded ? "disabled" : "";
+
       return `
             <div class="destination-card">
                 <div class="card-image"><img src="${dest.image}" alt="${dest.name}" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=No+Image'"></div>
@@ -434,7 +421,7 @@ function initDestinationsGrid() {
                     <div class="card-description">${dest.description}</div>
                     <div class="destination-footer">
                         <div class="card-price">From ${budget}</div>
-                        ${isExplorePage ? `<button class="btn btn-primary" onclick="addToPlan(${dest.id})">Add to Plan</button>` : ''}
+                        ${isExplorePage ? `<button class="${btnClass}" onclick="addToPlan(${dest.id}, this)" ${disabledAttr}>${btnText}</button>` : ''}
                     </div>
                 </div>
             </div>
@@ -447,13 +434,13 @@ function initDestinationsGrid() {
 
   // Initial render
   if (!isExplorePage) {
-    // Popular destinations - top 4 for home page
+    // afficher 4 destinations dans la page home
     render(destinations.slice(0, 4));
   } else {
-    render(destinations); // Show all on explore page
+    render(destinations); // afficher tous les destinations dans la page explore
   }
 
-  // Filter Logic
+  // Logique de filtrage
   if (isExplorePage && continentFilter && budgetFilter) {
     function filterDestinations() {
       const continent = continentFilter.value;
@@ -491,14 +478,14 @@ function initDestinationsGrid() {
 }
 
 /*---------------------------------------Ajout d'une destination---------------------------------------done*/
-window.addToPlan = function (id) {
+window.addToPlan = function (id, btnElement) {
+  const dest = destinations.find(d => d.id === id);
+  if (!dest) return;
+
   if (!auth.isLoggedIn()) {
     openLoginModal();
     return;
   }
-
-  const dest = destinations.find(d => d.id === id);
-  if (!dest) return;
 
   let currentPlan = storage.getPlan();
 
@@ -512,6 +499,13 @@ window.addToPlan = function (id) {
 
   plan = currentPlan; // Update global plan var
   updateDisplay();
+
+  // Update Button State
+  if (btnElement) {
+    btnElement.textContent = "Added";
+    btnElement.classList.replace("btn-primary", "btn-secondary");
+    btnElement.disabled = true;
+  }
 
   alert(`${dest.name} has been added to your plan!`);
 };
