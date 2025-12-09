@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Inspire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈️</span>
+                <span class="logo-text">TripPlan</span>
+            </a>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html" class="active">Explore</a></li>
+                <li><a href="myplan.html">My Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="loginBtn" class="btn-text">Sign In</button></li>
+                <li><button id="darkModeToggle" class="dark-mode-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Welcome Back</h2>
+            <p>Sign in to start planning your trip</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+        <h1 class="section-title">Explore All Destinations</h1>
+        <p class="section-subtitle">Filter by continent or budget to find your perfect destination</p>
+
+        <!-- Filters -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <label>Filter by Continent:</label>
+                <select id="continentFilter" class="filter-select">
+                    <option value="all">All Continents</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Filter by Budget:</label>
+                <select id="budgetFilter" class="filter-select">
+                    <option value="all">All Budgets</option>
+                    <option value="low">&lt;100</option>
+                    <option value="medium">entre 100 et 200</option>
+                    <option value="high">&gt;200</option>
+                </select>
+            </div>
+
+            <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+        </div>
+
+        <!-- Destinations Grid -->
+        <div class="destinations-grid" id="destinationsGrid"></div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            <p>No destinations match your filters. Try adjusting them!</p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TripPlan</h4>
+                <p>Your personal travel planning assistant</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Explore</a></li>
+                    <li><a href="myplan.html">My Plan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@tripplan.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TripPlan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

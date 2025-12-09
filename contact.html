@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Inspire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈️</span>
+                <span class="logo-text">TripPlan</span>
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinations.html">Explore</a></li>
+                <li><a href="myplan.html">My Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="loginBtn" class="btn-text">Sign In</button></li>
+                <li><button id="darkModeToggle" class="dark-mode-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="form-container">
+        <section class="formulaire">
+        <h2>Send us a message</h2>
+        <form>
+            <label for="nom">Name</label>
+            <input type="text" id="nom" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your email" required>
+
+            <label for="sujet">Subject</label>
+            <input type="text" id="sujet" placeholder="Subject of the message">
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your message..." required></textarea>
+
+            <button class="BTN" type="submit">Send</button>
+        </form>
+        </section>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TripPlan</h4>
+                <p>Your personal travel planning assistant</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Explore</a></li>
+                    <li><a href="myplan.html">My Plan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@tripplan.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TripPlan. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
