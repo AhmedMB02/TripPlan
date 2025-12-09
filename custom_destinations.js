@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     continent: continent,
                     description: description,
                     minBudgetDay: budget,
-                    image: 'https://via.placeholder.com/300x200?text=Custom+Trip' // Default placeholder
+                    image: 'https://via.placeholder.com/300x200?text=Custom+Trip'
                 };
 
                 let currentPlan = storage.getPlan();
                 currentPlan.destinations.push(newDest);
                 storage.savePlan(currentPlan);
-                plan = currentPlan; // Update global
+                plan = currentPlan;
                 updateDisplay();
 
                 alert('Custom destination added to your plan!');

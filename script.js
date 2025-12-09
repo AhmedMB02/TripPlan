@@ -47,14 +47,8 @@ const storage = {
   },
 }
 
-
-
-
-
-
 // Initialize Plan
 let plan = storage.getPlan()
-
 
 // Dark mode management
 function initDarkMode() {
@@ -79,9 +73,6 @@ function initDarkMode() {
 initDarkMode()
 
 
-
-
-
 // Mobile Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -93,9 +84,6 @@ if (hamburger) {
     hamburger.classList.toggle("toggle");
   });
 }
-
-
-
 
 /*----------------------------------la logique d'authentification---------------------------------done*/
 const auth = {
@@ -176,13 +164,6 @@ if (loginForm) {
 
 // Initial UI Update
 auth.updateUI();
-
-
-
-
-
-
-
 
 
 /*----------------------------------la logique de drag and drop dans itinerary---------------------------------done*/
@@ -350,31 +331,6 @@ function updateDisplay() {
 
 updateDisplay();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------Grille des destinations---------------------------------------done*/
 
 function initDestinationsGrid() {
@@ -510,21 +466,6 @@ window.addToPlan = function (id, btnElement) {
   alert(`${dest.name} has been added to your plan!`);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------Suppression d'une destination---------------------------------------done*/
 window.removeDestination = function (id) {
   let currentPlan = storage.getPlan();
@@ -553,29 +494,6 @@ window.toggleDid = function (id) {
     updateDisplay();
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*---------------------------------------Réglage ajout de vol---------------------------------------done*/
 const addFlightBtn = document.getElementById('addFlightBtn');
@@ -687,8 +605,7 @@ if (addActivityBtn) {
   });
 }
 
-
-// Clear Plan Button Logic
+/*---------------------------------------Clear Plan Button Logic---------------------------------------done*/
 const clearPlanBtn = document.getElementById('clearPlanBtn');
 if (clearPlanBtn) {
   clearPlanBtn.addEventListener('click', () => {
@@ -701,12 +618,12 @@ if (clearPlanBtn) {
       storage.savePlan(currentPlan);
       plan = currentPlan; // Update global state
       updateDisplay();
-      // alert("Your plan has been cleared."); // Optional feedback
+      alert("Your plan has been cleared.");
     }
   });
 }
 
-/*---------------------------------------Réglage de budge---------------------------------------done*/
+/*---------------------------------------Réglage de budget---------------------------------------done*/
 const setBudgetBtn = document.getElementById('setBudgetBtn');
 if (setBudgetBtn) {
   setBudgetBtn.addEventListener('click', () => {

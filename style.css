@@ -31,7 +31,7 @@
   --radius-lg: 12px;
 }
 
-/* Dark Mode Overrides */
+/*-----------------------------------------dark_mode-----------------------------------------done*/
 body.dark-mode {
   --white: #1e1e1e;
   /* Dark background for containers */
@@ -62,7 +62,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ===== Modal Styles ===== */
+/*-----------------------------------------modal styles-----------------------------------------done*/
 .modal {
   display: none;
   position: fixed;
@@ -151,8 +151,6 @@ body {
   color: var(--white);
 }
 
-
-
 /*-----------------------------------------navbar_hamburger-----------------------------------------done*/
 .navbar {
   background-color: var(--white);
@@ -185,7 +183,6 @@ body.dark-mode .navbar {
   font-weight: 700;
   color: var(--primary-blue);
 }
-
 
 .logo-text {
   color: var(--dark-gray);
@@ -220,7 +217,7 @@ body.dark-mode .navbar {
   background-color: var(--primary-blue);
 }
 
-/*bouton dark mode*/
+/*-----------------------------------------bouton dark_mode-----------------------------------------done*/
 .dark-mode-toggle {
   background: none;
   border: none;
@@ -258,18 +255,6 @@ body.dark-mode .navbar {
 .hamburger.toggle span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------Hero Section-----------------------------------------*/
 .hero {
@@ -313,14 +298,6 @@ body.dark-mode .navbar {
   background-repeat: no-repeat;
   border-radius: 12px;
 }
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------Buttons-----------------------------------------*/
 .btn {
@@ -369,7 +346,7 @@ body.dark-mode .navbar {
   transform: translateY(-2px);
 }
 
-/*-----------------------------------------Featured Section-----------------------------------------*/
+/*-----------------------------------------section des destinations dans home-----------------------------------------*/
 .featured-section {
   max-width: 1200px;
   margin: var(--spacing-xl) auto;
@@ -464,11 +441,7 @@ body.dark-mode .navbar {
   margin-top: var(--spacing-md);
 }
 
-
-
-
-
-/* ===== CTA Section ===== */
+/*-----------------------------------------CTA Section-----------------------------------------*/
 .cta-section {
   background: linear-gradient(135deg, var(--soft-blue) 0%, #e0f7fa 100%);
   border-radius: var(--radius-lg);
@@ -488,12 +461,6 @@ body.dark-mode .navbar {
   margin-bottom: var(--spacing-lg);
   font-size: 1.05rem;
 }
-
-
-
-
-
-
 
 /*-----------------------------------------How It Works-----------------------------------------*/
 .how-it-works {
@@ -548,29 +515,6 @@ body.dark-mode .navbar {
   color: #666;
   font-size: 0.95rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------Formulaire du contact-----------------------------------------*/
 .form-container {
@@ -644,15 +588,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
-
-
-
-
-
-
-
 /*-----------------------------------------Responsive Design-----------------------------------------*/
-/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -680,7 +616,6 @@ button:hover {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
-  /* Adjust dark mode toggle position in mobile menu */
   .nav-links li {
     opacity: 0;
     margin-bottom: var(--spacing-md);
@@ -785,45 +720,7 @@ button:hover {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== MyPlan Section ===== */
+/*-----------------------------------------section myplan-----------------------------------------*/
 .myplan-section {
   max-width: 1200px;
   margin: var(--spacing-xl) auto;
@@ -879,7 +776,7 @@ button:hover {
   margin-top: var(--spacing-sm);
 }
 
-/* ===== Destinations Added ===== */
+/*-----------------------------------------section destinations added-----------------------------------------*/
 .destinations-added {
   margin-bottom: var(--spacing-xl);
 }
@@ -940,7 +837,7 @@ button:hover {
   font-weight: 600;
 }
 
-/* ===== Travel Details ===== */
+/*-----------------------------------------section travel details-----------------------------------------*/
 .travel-details-section {
   margin-bottom: var(--spacing-xl);
 }
@@ -1027,7 +924,7 @@ button:hover {
   white-space: nowrap;
 }
 
-/* ===== Unified Itinerary Styles ===== */
+/*-----------------------------------------section itinerary-----------------------------------------*/
 .add-items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1091,7 +988,6 @@ button:hover {
 
 .remove-detail {
   cursor: pointer;
-  /* Ensure pointer on remove button */
 }
 
 /* Item Type Indicators */
@@ -1117,43 +1013,13 @@ button:hover {
   font-size: 0.8rem;
 }
 
-/* ===== Clear Plan ===== */
+/*-----------------------------------------section clear plan-----------------------------------------*/
 .clear-plan-section {
   text-align: center;
   padding: var(--spacing-lg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== Destinations Section ===== */
+/*-----------------------------------------section destinations-----------------------------------------*/
 .destinations-section {
   max-width: 1200px;
   margin: var(--spacing-xl) auto;
@@ -1202,105 +1068,6 @@ button:hover {
   color: #666;
   font-size: 1.1rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------les styles des elements de My Itinerary -----------------------------------------*/
 .itinerary-item {
@@ -1394,22 +1161,15 @@ button:hover {
 /* Type Specific Styles */
 .itinerary-item.type-flight {
   border-left-color: #3498db;
-  /* Blue */
 }
 
 .itinerary-item.type-hotel {
   border-left-color: #f1c40f;
-  /* Yellow/Gold */
 }
 
 .itinerary-item.type-activity {
   border-left-color: #2ecc71;
-  /* Green */
 }
-
-
-
-
 
 /*-----------------------------------------Footer-----------------------------------------*/
 .footer {
