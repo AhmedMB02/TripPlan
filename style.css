@@ -31,6 +31,24 @@
   --radius-lg: 12px;
 }
 
+/* Dark Mode Overrides */
+body.dark-mode {
+  --white: #1e1e1e;
+  /* Dark background for containers */
+  --light-gray: #121212;
+  /* Very dark background for the page/sections */
+  --dark-gray: #ecf0f1;
+  /* Light text */
+  --soft-blue: #2c3e50;
+  /* Darker accent backgrounds */
+  --primary-blue: #5dade2;
+  /* Lighter blue for better contrast */
+  background-color: var(--light-gray);
+  /* Dark page background */
+  color: var(--dark-gray);
+  /* Light text */
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -383,7 +401,7 @@ body.dark-mode .navbar {
 }
 
 .destination-card {
-  background: white;
+  background: var(--white);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -563,7 +581,7 @@ body.dark-mode .navbar {
 }
 
 .formulaire {
-  background: white;
+  background: var(--white);
   border-radius: 12px;
   padding: 2rem;
   width: 500px;
@@ -578,7 +596,7 @@ body.dark-mode .navbar {
 .formulaire h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: var(--dark-gray);
 }
 
 label {
@@ -1284,8 +1302,7 @@ button:hover {
 
 
 
-
-/* ===== Itinerary Items Styling ===== */
+/*-----------------------------------------les styles des elements de My Itinerary -----------------------------------------*/
 .itinerary-item {
   background: var(--white);
   padding: var(--spacing-md);
@@ -1391,12 +1408,16 @@ button:hover {
 }
 
 
+
+
+
 /*-----------------------------------------Footer-----------------------------------------*/
 .footer {
-  background-color: var(--dark-gray);
-  color: var(--white);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
   margin-top: var(--spacing-xl);
+  border-top: 1px solid var(--light-gray);
 }
 
 .footer-content {

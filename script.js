@@ -1,4 +1,3 @@
-// Main Script
 // LocalStorage Management
 const storage = {
   getPlan() {
@@ -103,7 +102,10 @@ if (hamburger) {
   });
 }
 
-// ===== Authentication Logic =====
+
+
+
+/*----------------------------------la logique d'authentification---------------------------------done*/
 const auth = {
   login(username) {
     localStorage.setItem("user", username);
@@ -141,7 +143,7 @@ const auth = {
   }
 };
 
-// Modal Logic
+/*----------------------------------la logique de la modal---------------------------------done*/
 const loginModal = document.getElementById("loginModal");
 const closeModal = document.querySelector(".close-modal");
 const loginForm = document.getElementById("loginForm");
@@ -191,7 +193,7 @@ auth.updateUI();
 
 
 
-// ===== Drag and Drop Helpers =====
+/*----------------------------------la logique de drag and drop---------------------------------done*/
 let draggedItem = null;
 
 function formatDate(date) {
@@ -688,6 +690,25 @@ if (addActivityBtn) {
     document.getElementById('activityInput').value = '';
     document.getElementById('activityDateInput').value = '';
     document.getElementById('activityCostInput').value = '';
+  });
+}
+
+
+// Clear Plan Button Logic
+const clearPlanBtn = document.getElementById('clearPlanBtn');
+if (clearPlanBtn) {
+  clearPlanBtn.addEventListener('click', () => {
+    if (confirm("Are you sure you want to clear your entire plan? This will remove all destinations and itinerary items.")) {
+      let currentPlan = storage.getPlan(); // Get fresh copy
+      currentPlan.destinations = [];
+      currentPlan.itinerary = [];
+      // Keeping wallet intact based on typical user expectation, or reset if needed.
+
+      storage.savePlan(currentPlan);
+      plan = currentPlan; // Update global state
+      updateDisplay();
+      // alert("Your plan has been cleared."); // Optional feedback
+    }
   });
 }
 
